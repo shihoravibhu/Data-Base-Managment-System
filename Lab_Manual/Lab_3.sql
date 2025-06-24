@@ -158,6 +158,7 @@ SELECT *
 FROM DEPOSIT
 WHERE NOT (ACTNO BETWEEN 105 AND 109)
 
+
 -- 5. Select all records from BORROW where the amount is greater than 1000 and less than or equal to 7000, and the loan number is between 250 and 600 
 
 SELECT *
