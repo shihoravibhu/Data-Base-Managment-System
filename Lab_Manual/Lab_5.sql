@@ -82,7 +82,7 @@ USE CSE_A4_177
 -- 1. Add two more columns City VARCHAR (20) (Not null) and Backlog INT (Null). 
 
 	ALTER TABLE STUDENT_DETAIL
-	ADD City VARCHAR(20) NOT NULL,
+	ADD City VARCHAR(20) NOT NULL,  -- CITY MA NULL VALUE ENTER NAI THAVA DYE JO APDE TEMA NULL VALUE ENTER KARSI TO ERROR AVSE AND APDE TEMA DEFAULT KARI NE VALUE API SAKIYE 
     Backlog INT;
 	
 	SELECT * FROM STUDENT_DETAIL
@@ -160,7 +160,7 @@ USE CSE_A4_177
 -- 6. Delete all the remaining records using Delete command. 
 
 	DELETE 
-	FROM DEPOSIT_DETAIL
+	FROM DEPOSIT_DETAIL  -- DELETE ALL COLUMN
 
 	SELECT * FROM DEPOSIT_DETAIL
 
@@ -241,7 +241,7 @@ INSERT INTO EMPLOYEE_MASTER (EmpNo, EmpName, JoiningDate, Salary, City) VALUES
 
 -- 7. Delete all the records of Employee_MASTER table. (Use Truncate) 
 
-	TRUNCATE TABLE Employee_MASTER
+	TRUNCATE TABLE Employee_MASTER		-- DLETE KARTA SPEED VADHAREE 
 
 -- 8. Remove Employee_MASTER table. (Use Drop) 
 
