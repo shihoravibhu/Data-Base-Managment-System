@@ -103,19 +103,21 @@ INSERT INTO SALES_DATA (Region, Product, Sales_Amount, Year) VALUES
 
 -- 13. Find the Region Where 'Mobile' Had the Lowest Total Sales Across All Years. 
     
-    SELECT TOP 1 REGION , YEAR , SUM(SALES_AMOUNT) AS LOWEST
+    SELECT TOP 1 REGION , SUM(SALES_AMOUNT) AS LOWEST
     FROM SALES_DATA
     WHERE PRODUCT = 'MOBILE'
-    GROUP BY REGION , YEAR
+    GROUP BY REGION
     ORDER BY SUM(SALES_AMOUNT)
+
 
 -- 14. Find the Product with the Highest Sales Across All Regions in 2023. 
     
-    SELECT TOP 1 PRODUCT,REGION,SUM(SALES_AMOUNT) AS HIGHEST
+    SELECT TOP 1 PRODUCT, SUM(SALES_AMOUNT) AS HIGHEST
     FROM SALES_DATA
-    WHERE YEAR = '2023'
-    GROUP BY PRODUCT , REGION
-    ORDER BY SUM(Sales_Amount) DESC
+    WHERE YEAR = 2023
+    GROUP BY PRODUCT
+    ORDER BY SUM(SALES_AMOUNT) DESC
+
 
 -- 15. Find Regions Where 'TV' Sales in 2023 Were Greater Than 1000. 
 
@@ -174,12 +176,12 @@ INSERT INTO SALES_DATA (Region, Product, Sales_Amount, Year) VALUES
 
 
 -- 1. Display Products with Average Sales Amount Between 1000 and 2000, Ordered by Product Name 
-    
-    SELECT PRODUCT,AVG(SALES_AMOUNT) AS AVG
+
+    SELECT PRODUCT, AVG(SALES_AMOUNT) AS AVG
     FROM SALES_DATA
-    WHERE Sales_Amount > 1000 AND Sales_Amount < 2000
     GROUP BY PRODUCT
-    ORDER BY PRODUCT
+    HAVING AVG(SALES_AMOUNT) BETWEEN 1000 AND 2000
+    ORDER BY PRODUCT;
 
 -- 2. Display Years with More Than 1 Orders from Each Region 
     

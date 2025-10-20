@@ -186,8 +186,8 @@ VALUES
 --1. Find the length of following. (I) NULL    (II) ‘   hello     ’   (III)  Blank 
 	
 	SELECT LEN(NULL)        AS LenNull,     -- NULL → NULL
-       LEN('   hello   ') AS LenHello,  -- Counts chars except trailing spaces → 8
-       LEN(' ')          AS LenBlank;   -- Blank (1 space) → 1
+       LEN('   hello   ') AS LenHello,  -- Counts chars except trailing spaces → 8  (pachad ni 3 space nai ave)
+       LEN(' ')          AS LenBlank;   -- Blank (1 space) → 0
 
 --2. Display your name in lower & upper case. 
 	
